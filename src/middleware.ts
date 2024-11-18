@@ -11,13 +11,5 @@ export function middleware(request: NextRequest) {
         return response;
     }
 
-    if (pathname.startsWith('/api/time')) {
-        console.log('time api called: ', request.url)
-        const response = NextResponse.next();
-        response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=60, stale-while-revalidate=60');
-
-        return response;
-    }
-
     return NextResponse.next();
 }
