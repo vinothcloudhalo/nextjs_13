@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #9c46f6;
+    --secondary-color: #8c3cec;
+    --text-color: #111111;
+    --text-secondary-color: #6b7280;
+    --border-color: #e5e7eb;
+    --red-color: #ef233c;
+    --green-color: #2ec4b6;
+    --gray-color: #dee2e6;
+    --blue-color: #1da1f2;
+    --border-radius: 7px;
+    --font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
+    --container-max-width: 1120px;
+    --alert-color: #fcbf49;
+    --box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 2px;
+    --hover-color: #00000010;
+    --background-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    width: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+::selection {
+    background-color: #b3d4fc;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    @apply text-2xl font-bold;
+}
+
+h2 {
+    @apply text-xl font-bold;
+}
+
+h3 {
+    @apply text-lg font-bold;
+}
+
+button.transparent {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease-in-out;
+}
+
+button.transparent:hover {
+    background-color: var(--hover-color);
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+input {
+    -webkit-appearance: none;
+    --webkit-appearance: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bcbcbc;
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9e9e9e;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.iframe {
+    color-scheme: light !important;
+}
+
+code {
+    @apply bg-yellow-100 px-2 text-yellow-600 rounded-md;
+}
