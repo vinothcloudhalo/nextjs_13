@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
     if (pathname.startsWith('/api/thumbnails')) {
         console.log('thumbnail api called: ',  request.url)
         const response = NextResponse.next();
-        response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=60, stale-while-revalidate=60');
+        response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=300, stale-while-revalidate=300');
 
         return response;
     }

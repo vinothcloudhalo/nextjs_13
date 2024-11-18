@@ -53,8 +53,6 @@ export async function GET(request: Request) {
         isBgImageAvailable = domainResponse.status === 200;
     } catch(e) {}
 
-    if(isBgImageAvailable == false) bgImageUrl = speakerCircleImageUrl;
-
     try {
         return new ImageResponse(
             (
@@ -151,7 +149,7 @@ export async function GET(request: Request) {
         console.error('Thumbnail generation failed:', error);
 
         // Failed response without caching
-        return new Response('Thumbnail generation failed', {
+        return new Response(`Thumbnail generation failed: time: ${new Date().toISOString()}`, {
             status: 500,
             headers: { 'Cache-Control': 'no-store, max-age=0' },
         });
